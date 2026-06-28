@@ -1,172 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muri Studio | Custom Website Development</title>
-  <meta name="description" content="Muri Studio provides custom website development, frontend implementation, backend integration, admin dashboards, and website maintenance services." />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, Helvetica, sans-serif; background: #0f172a; color: #f8fafc; line-height: 1.7; }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1100px, 92%); margin: 0 auto; }
-    header { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    .brand { font-size: 22px; font-weight: 700; }
-    .nav-links { display: flex; gap: 22px; font-size: 14px; color: #cbd5e1; }
-    .hero { padding: 96px 0 80px; background: radial-gradient(circle at top left, rgba(59,130,246,0.35), transparent 34%), radial-gradient(circle at top right, rgba(124,58,237,0.35), transparent 32%); }
-    .hero h1 { font-size: clamp(42px, 7vw, 76px); line-height: 1.08; max-width: 900px; margin-bottom: 24px; }
-    .hero p { font-size: 20px; color: #cbd5e1; max-width: 760px; margin-bottom: 34px; }
-    .button { display: inline-block; padding: 14px 22px; border-radius: 999px; background: linear-gradient(135deg, #3b82f6, #7c3aed); color: white; font-weight: 700; }
-    section { padding: 72px 0; }
-    h2 { font-size: 34px; margin-bottom: 18px; }
-    .section-lead { color: #cbd5e1; max-width: 760px; margin-bottom: 34px; font-size: 18px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
-    .card { background: rgba(30,41,59,0.88); border: 1px solid rgba(148,163,184,0.18); border-radius: 22px; padding: 26px; box-shadow: 0 20px 50px rgba(0,0,0,0.18); }
-    .card h3 { font-size: 21px; margin-bottom: 10px; }
-    .card p, .card li { color: #cbd5e1; font-size: 16px; }
-    .price { font-size: 28px; font-weight: 800; margin: 12px 0; }
-    .muted { color: #94a3b8; font-size: 14px; }
-    .contact-box { background: linear-gradient(135deg, rgba(59,130,246,0.18), rgba(124,58,237,0.18)); border: 1px solid rgba(148,163,184,0.2); border-radius: 26px; padding: 34px; }
-    footer { padding: 38px 0; border-top: 1px solid rgba(255,255,255,0.08); color: #94a3b8; font-size: 14px; }
-    footer .links { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 12px; }
-    @media (max-width: 700px) { .nav-links { display: none; } .hero { padding: 72px 0 56px; } section { padding: 56px 0; } }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muri Studio | Custom Website Development</title>
+<meta name="description" content="Muri Studio provides custom website development, frontend implementation, backend integration, admin dashboards, and website maintenance services." />
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,Helvetica,sans-serif;background:#080d1c;color:#f8fafc;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92%);margin:auto}
+
+header{position:sticky;top:0;z-index:10;background:rgba(8,13,28,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.brand{font-size:22px;font-weight:900;letter-spacing:.3px}
+.nav-links{display:flex;gap:22px;font-size:14px;color:#cbd5e1}
+.nav-links a:hover{color:#fff}
+
+.hero{padding:110px 0 90px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-160px;background:radial-gradient(circle at 20% 10%,rgba(59,130,246,.42),transparent 30%),radial-gradient(circle at 80% 0%,rgba(124,58,237,.38),transparent 32%),radial-gradient(circle at 50% 80%,rgba(14,165,233,.18),transparent 34%);z-index:-1}
+.badge{display:inline-block;margin-bottom:22px;padding:8px 15px;border:1px solid rgba(148,163,184,.28);border-radius:999px;color:#dbeafe;background:rgba(15,23,42,.6)}
+h1{font-size:clamp(42px,7vw,78px);line-height:1.06;max-width:960px;margin-bottom:24px;letter-spacing:-1.8px}
+.hero p{font-size:20px;color:#cbd5e1;max-width:780px;margin-bottom:34px}
+.button{display:inline-block;padding:15px 25px;border-radius:999px;background:linear-gradient(135deg,#3b82f6,#7c3aed);font-weight:900;box-shadow:0 18px 50px rgba(59,130,246,.32)}
+.button:hover{transform:translateY(-2px)}
+
+section{padding:76px 0}
+h2{font-size:36px;margin-bottom:16px;letter-spacing:-.6px}
+.section-lead{color:#cbd5e1;max-width:780px;margin-bottom:34px;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:linear-gradient(180deg,rgba(30,41,59,.95),rgba(15,23,42,.96));border:1px solid rgba(148,163,184,.18);border-radius:26px;padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.24);transition:.22s}
+.card:hover{transform:translateY(-4px);border-color:rgba(96,165,250,.5)}
+.card h3{font-size:21px;margin-bottom:10px}
+.card p{color:#cbd5e1;font-size:16px}
+.icon{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#3b82f6,#7c3aed);display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-weight:900}
+
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.contact-box{background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(124,58,237,.2));border:1px solid rgba(148,163,184,.22);border-radius:30px;padding:38px}
+.policy p{margin-bottom:14px}
+
+footer{padding:40px 0;border-top:1px solid rgba(255,255,255,.08);color:#94a3b8;font-size:14px}
+footer .links{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+
+@media(max-width:780px){
+.nav-links{display:none}
+.hero{padding:78px 0 64px}
+section{padding:58px 0}
+.split{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
 <header>
-  <div class="container">
-    <nav>
-      <div class="brand">Muri Studio</div>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-        <a href="#terms">Terms</a>
-      </div>
-    </nav>
-  </div>
+<div class="container">
+<nav>
+<div class="brand">Muri Studio</div>
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#process">Process</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+<a href="#terms">Terms</a>
+</div>
+</nav>
+</div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="container">
-      <h1>Custom website development with frontend and backend integration.</h1>
-      <p>
-        Muri Studio builds practical, maintainable websites and web systems for businesses and professionals.
-      </p>
-      <a class="button" href="mailto:muri.studio.co@gmail.com">Contact Muri Studio</a>
-    </div>
-  </section>
+<section class="hero">
+<div class="container">
+<div class="badge">Custom Website Development & Maintenance</div>
+<h1>Full-stack website development for practical business needs.</h1>
+<p>
+Muri Studio builds responsive websites, frontend interfaces, backend integrations,
+admin dashboards, and maintainable web systems for businesses and professionals.
+</p>
+<a class="button" href="mailto:muri.studio.co@gmail.com">Get in Touch</a>
+</div>
+</section>
 
-  <section id="about">
-    <div class="container">
-      <h2>About</h2>
-      <div class="card">
-        <p>
-          Muri Studio focuses on stable implementation, clean structure, maintainability, and clear user experience.
-          We help clients turn ideas and operational needs into websites, dashboards, and connected web systems.
-        </p>
-      </div>
-    </div>
-  </section>
+<section id="about">
+<div class="container split">
+<div>
+<h2>About Muri Studio</h2>
+<p class="section-lead">
+We focus on stable implementation, clean structure, maintainability, and clear user experience.
+</p>
+</div>
+<div class="card">
+<p>
+Muri Studio helps clients turn ideas and operational needs into websites, dashboards,
+and connected web systems. We value practical solutions, clear communication, and long-term maintainability.
+</p>
+</div>
+</div>
+</section>
 
-  <section id="services">
-    <div class="container">
-      <h2>Services</h2>
-      <p class="section-lead">We help clients turn business requirements into practical web systems.</p>
-      <div class="grid">
-        <div class="card"><h3>Website Development</h3><p>Custom websites, landing pages, responsive layouts, and business web pages.</p></div>
-        <div class="card"><h3>Frontend Implementation</h3><p>HTML, CSS, JavaScript, and modern mobile-friendly interface implementation.</p></div>
-        <div class="card"><h3>Backend Integration</h3><p>API integration, form handling, database-connected features, and backend service connection.</p></div>
-        <div class="card"><h3>Admin Dashboard</h3><p>Internal management pages, data tables, content management interfaces, and operational tools.</p></div>
-        <div class="card"><h3>Website Maintenance</h3><p>Monthly maintenance, bug fixes, content updates, monitoring, and technical support.</p></div>
-        <div class="card"><h3>Technical Consulting</h3><p>Requirement clarification, system planning, third-party service integration, and technical advice.</p></div>
-      </div>
-    </div>
-  </section>
+<section id="services">
+<div class="container">
+<h2>Services</h2>
+<p class="section-lead">From marketing pages to backend-connected systems, we help turn requirements into working web products.</p>
+<div class="grid">
+<div class="card"><div class="icon">01</div><h3>Website Development</h3><p>Custom websites, landing pages, responsive layouts, and business web pages.</p></div>
+<div class="card"><div class="icon">02</div><h3>Frontend Implementation</h3><p>HTML, CSS, JavaScript, and mobile-friendly interface implementation.</p></div>
+<div class="card"><div class="icon">03</div><h3>Backend Integration</h3><p>API integration, form handling, database-connected features, and backend service connection.</p></div>
+<div class="card"><div class="icon">04</div><h3>Admin Dashboard</h3><p>Internal management pages, data tables, content management interfaces, and operational tools.</p></div>
+<div class="card"><div class="icon">05</div><h3>Website Maintenance</h3><p>Monthly maintenance, bug fixes, content updates, monitoring, and technical support.</p></div>
+<div class="card"><div class="icon">06</div><h3>Technical Consulting</h3><p>Requirement clarification, system planning, third-party integration, and technical advice.</p></div>
+</div>
+</div>
+</section>
 
-  <section id="pricing">
-    <div class="container">
-      <h2>Plans & Payments</h2>
-      <p class="section-lead">
-        Each project is confirmed before payment. Secure payment links may be provided after scope, deliverables, and timeline are agreed.
-      </p>
-      <div class="grid">
-        <div class="card"><h3>Website Development</h3><div class="price">From NT$9,800</div><p>Suitable for landing pages, company websites, and small custom web projects.</p><p class="muted">Final pricing depends on scope.</p></div>
-        <div class="card"><h3>Website Maintenance</h3><div class="price">Monthly plan</div><p>Suitable for content updates, issue fixing, minor changes, and regular support.</p><p class="muted">Scope is confirmed before subscription.</p></div>
-        <div class="card"><h3>Custom Integration</h3><div class="price">Quote-based</div><p>For backend integration, admin dashboards, database features, and workflow tools.</p><p class="muted">Quotation is provided after requirement review.</p></div>
-      </div>
-    </div>
-  </section>
+<section id="process">
+<div class="container">
+<h2>Our Process</h2>
+<p class="section-lead">
+Every website is unique. We discuss your requirements first and provide a tailored proposal
+based on project scope, features, timeline, and expected deliverables.
+</p>
+<div class="grid">
+<div class="card"><h3>Initial Consultation</h3><p>We start by understanding your business goals, project requirements, target users, and expected outcomes.</p></div>
+<div class="card"><h3>Proposal & Quotation</h3><p>After reviewing your requirements, we provide a customized proposal including scope, timeline, deliverables, and quotation.</p></div>
+<div class="card"><h3>Development & Delivery</h3><p>Once approved, we build, test, refine, and deliver your website with ongoing support available when needed.</p></div>
+</div>
+</div>
+</section>
 
-  <section id="portfolio">
-    <div class="container">
-      <h2>Portfolio</h2>
-      <div class="card">
-        <p>
-          Portfolio is available upon request due to client confidentiality.
-          Selected work may be shared privately when appropriate.
-        </p>
-      </div>
-    </div>
-  </section>
+<section id="why">
+<div class="container">
+<h2>Why Choose Muri Studio</h2>
+<div class="grid">
+<div class="card"><h3>Clean Development</h3><p>Modern frontend implementation with maintainable structure.</p></div>
+<div class="card"><h3>Full-Stack Integration</h3><p>Frontend, backend, APIs, forms, and database-connected workflows.</p></div>
+<div class="card"><h3>Responsive Design</h3><p>Optimized for desktop, tablet, and mobile devices.</p></div>
+<div class="card"><h3>Long-term Support</h3><p>Maintenance plans and future feature expansion when needed.</p></div>
+</div>
+</div>
+</section>
 
-  <section id="contact">
-    <div class="container">
-      <div class="contact-box">
-        <h2>Contact</h2>
-        <p class="section-lead">For website development, maintenance, or integration requests, please contact us by email.</p>
-        <p>Email: <a href="mailto:muri.studio.co@gmail.com">muri.studio.co@gmail.com</a></p>
-      </div>
-    </div>
-  </section>
+<section id="portfolio">
+<div class="container">
+<h2>Portfolio</h2>
+<div class="card">
+<p>
+Portfolio is available upon request due to client confidentiality.
+Selected work may be shared privately when appropriate.
+</p>
+</div>
+</div>
+</section>
 
-  <section id="privacy">
-    <div class="container">
-      <h2>Privacy Policy</h2>
-      <div class="card">
-        <p>
-          Muri Studio only collects information necessary to communicate with customers, confirm project requirements,
-          deliver services, and process payments. Payment information is handled securely by the payment platform and is not stored by Muri Studio.
-        </p>
-        <p>
-          Customer information will not be sold or shared with unrelated third parties.
-        </p>
-      </div>
-    </div>
-  </section>
+<section id="contact">
+<div class="container">
+<div class="contact-box">
+<h2>Let's Build Your Website</h2>
+<p class="section-lead">
+Have a project in mind? We'd love to discuss your ideas and help bring them to life.
+</p>
+<p>Email: <a href="mailto:muri.studio.co@gmail.com">muri.studio.co@gmail.com</a></p>
+</div>
+</div>
+</section>
 
-  <section id="terms">
-    <div class="container">
-      <h2>Terms of Service</h2>
-      <div class="card">
-        <p>
-          All services are provided based on the confirmed scope, quotation, timeline, and deliverables agreed with each customer before payment.
-        </p>
-        <p>
-          Revisions, refunds, and additional requests are handled according to the confirmed project scope.
-          Any work outside the agreed scope may require a separate quotation.
-        </p>
-        <p>
-          For maintenance subscriptions, included service items and response expectations are confirmed before subscription starts.
-        </p>
-      </div>
-    </div>
-  </section>
+<section id="privacy">
+<div class="container">
+<h2>Privacy Policy</h2>
+<div class="card policy">
+<p>
+Muri Studio only collects information necessary to communicate with customers,
+confirm project requirements, deliver services, and process payments.
+</p>
+<p>
+Payment information is handled securely by the payment platform and is not stored by Muri Studio.
+Customer information will not be sold or shared with unrelated third parties.
+</p>
+</div>
+</div>
+</section>
+
+<section id="terms">
+<div class="container">
+<h2>Terms of Service</h2>
+<div class="card policy">
+<p>
+All services are provided based on the confirmed scope, quotation, timeline,
+and deliverables agreed with each customer before payment.
+</p>
+<p>
+Revisions, refunds, and additional requests are handled according to the confirmed project scope.
+Any work outside the agreed scope may require a separate quotation.
+</p>
+<p>
+For maintenance subscriptions, included service items and response expectations are confirmed before subscription starts.
+</p>
+</div>
+</div>
+</section>
 </main>
 
 <footer>
-  <div class="container">
-    © 2026 Muri Studio. All rights reserved.
-    <div class="links">
-      <a href="#privacy">Privacy Policy</a>
-      <a href="#terms">Terms of Service</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
+<div class="container">
+© 2026 Muri Studio. All rights reserved.
+<div class="links">
+<a href="#privacy">Privacy Policy</a>
+<a href="#terms">Terms of Service</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
 </footer>
 </body>
 </html>
