@@ -3,24 +3,30 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Muri Studio | Website Templates & Digital Solutions</title>
-<meta name="description" content="Muri Studio provides ready-to-use website templates, admin dashboard layouts, and optional customization services for businesses and professionals." />
+<title>Muri Studio | Website Templates & Digital Products</title>
+<meta name="description" content="Muri Studio sells ready-to-use website templates, admin dashboard templates, UI kits, and digital assets for modern businesses." />
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:Inter,Arial,Helvetica,sans-serif;background:#080d1c;color:#f8fafc;line-height:1.7}
 a{color:inherit;text-decoration:none}
 .container{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:rgba(8,13,28,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+
+header{position:sticky;top:0;z-index:10;background:rgba(8,13,28,.85);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
 nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
 .brand{font-size:22px;font-weight:900}
 .nav-links{display:flex;gap:22px;font-size:14px;color:#cbd5e1}
-.hero{padding:110px 0 90px;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:-160px;background:radial-gradient(circle at 20% 10%,rgba(59,130,246,.42),transparent 30%),radial-gradient(circle at 80% 0%,rgba(124,58,237,.38),transparent 32%);z-index:-1}
+.nav-links a:hover{color:#fff}
+
+.hero{padding:110px 0 92px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-160px;background:radial-gradient(circle at 20% 10%,rgba(59,130,246,.42),transparent 30%),radial-gradient(circle at 80% 0%,rgba(124,58,237,.38),transparent 32%),radial-gradient(circle at 50% 90%,rgba(14,165,233,.18),transparent 36%);z-index:-1}
 .badge{display:inline-block;margin-bottom:22px;padding:8px 15px;border:1px solid rgba(148,163,184,.28);border-radius:999px;color:#dbeafe;background:rgba(15,23,42,.6)}
 h1{font-size:clamp(42px,7vw,78px);line-height:1.06;max-width:960px;margin-bottom:24px;letter-spacing:-1.8px}
 .hero p{font-size:20px;color:#cbd5e1;max-width:780px;margin-bottom:34px}
 .button{display:inline-block;padding:15px 25px;border-radius:999px;background:linear-gradient(135deg,#3b82f6,#7c3aed);font-weight:900}
+.button.secondary{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);margin-left:10px}
+
 section{padding:76px 0}
 h2{font-size:36px;margin-bottom:16px}
 .section-lead{color:#cbd5e1;max-width:780px;margin-bottom:34px;font-size:18px}
@@ -29,12 +35,23 @@ h2{font-size:36px;margin-bottom:16px}
 .card h3{font-size:21px;margin-bottom:10px}
 .card p{color:#cbd5e1;font-size:16px}
 .icon{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#3b82f6,#7c3aed);display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-weight:900}
+.price{font-size:30px;font-weight:900;margin:14px 0}
+.muted{color:#94a3b8;font-size:14px;margin-top:10px}
+.tag{display:inline-block;margin-top:14px;padding:6px 10px;border-radius:999px;background:rgba(59,130,246,.14);color:#bfdbfe;font-size:13px}
+
 .contact-box{background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(124,58,237,.2));border:1px solid rgba(148,163,184,.22);border-radius:30px;padding:38px}
 footer{padding:40px 0;border-top:1px solid rgba(255,255,255,.08);color:#94a3b8;font-size:14px}
 footer .links{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
-@media(max-width:780px){.nav-links{display:none}.hero{padding:78px 0 64px}section{padding:58px 0}}
+
+@media(max-width:780px){
+.nav-links{display:none}
+.hero{padding:78px 0 64px}
+section{padding:58px 0}
+.button.secondary{display:block;margin:12px 0 0}
+}
 </style>
 </head>
+
 <body>
 <header>
 <div class="container">
@@ -42,8 +59,9 @@ footer .links{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
 <div class="brand">Muri Studio</div>
 <div class="nav-links">
 <a href="#products">Products</a>
-<a href="#customization">Customization</a>
+<a href="#license">License</a>
 <a href="#pricing">Pricing</a>
+<a href="#customization">Customization</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -51,15 +69,17 @@ footer .links{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
 </header>
 
 <main>
+
 <section class="hero">
 <div class="container">
-<div class="badge">Website Templates & Digital Solutions</div>
-<h1>Website templates and digital solutions for modern businesses.</h1>
+<div class="badge">Digital Products for Modern Businesses</div>
+<h1>Ready-to-use website templates and digital UI assets.</h1>
 <p>
-Muri Studio provides ready-to-use website templates, admin dashboard layouts,
-and optional customization services for businesses and professionals.
+Muri Studio creates website templates, admin dashboard templates, UI component packs,
+and digital assets designed to help businesses launch faster with clean, maintainable structure.
 </p>
-<a class="button" href="mailto:muri.studio.co@gmail.com">Contact Muri Studio</a>
+<a class="button" href="#products">View Products</a>
+<a class="button secondary" href="mailto:muri.studio.co@gmail.com">Contact Support</a>
 </div>
 </section>
 
@@ -67,13 +87,95 @@ and optional customization services for businesses and professionals.
 <div class="container">
 <h2>Products</h2>
 <p class="section-lead">
-Digital website assets designed to help businesses launch faster with clean, maintainable structure.
+Our products are digital website assets delivered online. Optional customization is available as an add-on when needed.
 </p>
+
 <div class="grid">
-<div class="card"><div class="icon">01</div><h3>Business Website Starter Kit</h3><p>Responsive website template for small businesses, professional pages, landing pages, and service websites.</p></div>
-<div class="card"><div class="icon">02</div><h3>Admin Dashboard Template</h3><p>Clean dashboard layout for internal tools, management pages, content workflows, and operational systems.</p></div>
-<div class="card"><div class="icon">03</div><h3>Frontend UI Components</h3><p>Reusable page sections, cards, forms, navigation layouts, and responsive interface components.</p></div>
-<div class="card"><div class="icon">04</div><h3>Website Maintenance Package</h3><p>Optional support package for updates, improvements, deployment assistance, and technical maintenance.</p></div>
+<div class="card">
+<div class="icon">01</div>
+<h3>Business Website Starter Kit</h3>
+<p>A responsive business website template for landing pages, company websites, service pages, and professional portfolios.</p>
+<span class="tag">Digital Template</span>
+</div>
+
+<div class="card">
+<div class="icon">02</div>
+<h3>Admin Dashboard Template</h3>
+<p>A clean dashboard layout for internal tools, management pages, content workflows, and operational systems.</p>
+<span class="tag">Dashboard Template</span>
+</div>
+
+<div class="card">
+<div class="icon">03</div>
+<h3>Frontend UI Component Pack</h3>
+<p>Reusable sections, cards, navigation layouts, forms, pricing blocks, and responsive interface components.</p>
+<span class="tag">UI Kit</span>
+</div>
+
+<div class="card">
+<div class="icon">04</div>
+<h3>Maintenance Add-on</h3>
+<p>Optional product support for template updates, minor improvements, deployment assistance, and technical maintenance.</p>
+<span class="tag">Optional Add-on</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="license">
+<div class="container">
+<h2>License & Delivery</h2>
+<p class="section-lead">
+Digital products are delivered electronically after purchase or confirmation.
+</p>
+
+<div class="grid">
+<div class="card">
+<h3>Digital Delivery</h3>
+<p>Templates and digital assets are delivered online as files, links, or repository access depending on the selected product.</p>
+</div>
+
+<div class="card">
+<h3>Usage License</h3>
+<p>Customers may use purchased templates for their own business website or project according to the confirmed license terms.</p>
+</div>
+
+<div class="card">
+<h3>Version Updates</h3>
+<p>Selected products may include updates, bug fixes, or maintenance support depending on the purchased package.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="container">
+<h2>Pricing</h2>
+<p class="section-lead">
+Pricing depends on the selected digital product, license type, delivery format, and optional add-on services.
+</p>
+
+<div class="grid">
+<div class="card">
+<h3>Business Website Starter Kit</h3>
+<div class="price">From US$99</div>
+<p>Responsive website template package for business pages and landing pages.</p>
+<p class="muted">Digital product. Optional customization available separately.</p>
+</div>
+
+<div class="card">
+<h3>Admin Dashboard Template</h3>
+<div class="price">From US$149</div>
+<p>Dashboard layout and UI structure for internal tools and management pages.</p>
+<p class="muted">Digital product. Final package depends on selected components.</p>
+</div>
+
+<div class="card">
+<h3>Customization Add-on</h3>
+<div class="price">Quote-based</div>
+<p>Optional customization, deployment assistance, styling adjustments, and maintenance support.</p>
+<p class="muted">Provided only as an add-on to selected digital products.</p>
+</div>
 </div>
 </div>
 </section>
@@ -83,28 +185,13 @@ Digital website assets designed to help businesses launch faster with clean, mai
 <h2>Optional Customization</h2>
 <div class="card">
 <p>
-Optional customization services are available for customers who need additional features,
-deployment support, or design adjustments based on our templates.
+Optional customization services are available for customers who need design adjustments,
+deployment support, additional sections, or minor feature changes based on our templates.
 </p>
 <p>
-Customization is provided as an add-on service after the selected template, scope,
+Customization is provided as an add-on service after the selected digital product, scope,
 timeline, and deliverables are confirmed with the customer.
 </p>
-</div>
-</div>
-</section>
-
-<section id="pricing">
-<div class="container">
-<h2>Pricing</h2>
-<p class="section-lead">
-Template pricing and customization fees depend on the selected product, required support,
-deployment needs, and optional add-on services.
-</p>
-<div class="grid">
-<div class="card"><h3>Website Template</h3><p>Quote-based pricing depending on template type and required delivery format.</p></div>
-<div class="card"><h3>Dashboard Template</h3><p>Quote-based pricing depending on layout complexity and component requirements.</p></div>
-<div class="card"><h3>Customization Add-on</h3><p>Optional quotation for deployment, styling adjustments, integration, and maintenance support.</p></div>
 </div>
 </div>
 </section>
@@ -114,7 +201,7 @@ deployment needs, and optional add-on services.
 <div class="contact-box">
 <h2>Contact</h2>
 <p class="section-lead">
-For template purchases, customization, or maintenance requests, please contact us by email.
+For template purchases, product questions, customization add-ons, or maintenance requests, please contact us by email.
 </p>
 <p>Email: <a href="mailto:muri.studio.co@gmail.com">muri.studio.co@gmail.com</a></p>
 </div>
@@ -153,6 +240,7 @@ Refunds and revisions are handled according to the applicable refund policy and 
 </div>
 </div>
 </section>
+
 </main>
 
 <footer>
@@ -163,9 +251,10 @@ Refunds and revisions are handled according to the applicable refund policy and 
 <a href="/terms.html">Terms of Service</a>
 <a href="/privacy.html">Privacy Policy</a>
 <a href="/refund.html">Refund Policy</a>
-<a href="#contact">Contact</a>
+<a href="mailto:muri.studio.co@gmail.com">Contact</a>
 </div>
 </div>
 </footer>
+
 </body>
 </html>
